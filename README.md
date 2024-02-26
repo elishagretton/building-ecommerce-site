@@ -6,8 +6,8 @@
   - [Key Objectives](#key-objectives)
   - [Data](#data)
   - [Key Tools](#key-tools)
-2. [File Structure]
-3. [Usage Instructions]
+2. [File Structure](#file-structure)
+3. [Usage Instructions](#usage-instructions)
 
 ## Introduction
 
@@ -26,7 +26,7 @@ My objectives were:
 5. Improve the appearance of the **Homepage** by adding a landing image, adding a product list, creating a social media gallery, and a sign up form.
 6. Improve the layout of **Product Page** by displaying an image, product name, and price.
 
-To manage my workload, I used a Kanban board on [Trello](https://trello.com/u/elishagretton/boards).
+To manage my workload, I used a Kanban board on [Trello](https://trello.com/).
 
 ### Data
 
@@ -37,6 +37,7 @@ To request the data to the web app, it is first stored in Supabase and then requ
 To find out how the data is used in the web app, please head to [Usage Instructions](#usage-instructions/data-setup)
 
 ### Key Tools
+
 #### TypeScript
 [TypeScript](https://www.typescriptlang.org/) is a strongly typed programming language that builds on JavaScript, giving a better tooling at any scale. Its main positive is it catches mistakes in your editor quickly, improving editor support and the codebase.
 
@@ -74,7 +75,7 @@ This ensures the header stays at the top of the page (`sticky top-0`), is the fu
 
 [Supabase](https://supabase.com/) is a platform to store a Postgres database. It has many features such as authentication, instant APIs, edge functions, realtime subscriptions, store, and vector embeddings.
 
-In this project, I stored the `products` data in Supabase, which is relatively easy. Instructions can be seen [here.](https://supabase.com/docs/guides/database/import-data)
+In this project, I stored the `products` data in Supabase. Instructions on how to upload a database can be found [here.](https://supabase.com/docs/guides/database/import-data)
 
 ### File Structure
 
@@ -137,7 +138,9 @@ In this project, I stored the `products` data in Supabase, which is relatively e
 
 #### Data Setup
 
-To first select the data, the `data/requests.ts` file has been created to store these queries. For example, to select all the product data:
+To set-up the data, first upload the data to Supabase.
+
+Then select the data, the `data/requests.ts` file has been created to store these queries. For example, to select all the product data:
 ```typescript
 export async function selectProductData(supabase: any) {
   let { data: products, error } = await supabase
