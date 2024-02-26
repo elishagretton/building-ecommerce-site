@@ -8,6 +8,7 @@
   - [Key Tools](#key-tools)
 2. [File Structure](#file-structure)
 3. [Usage Instructions](#usage-instructions)
+4. [Next Steps](#next-steps)
 
 ## Introduction
 
@@ -80,41 +81,41 @@ In this project, I stored the `products` data in Supabase. Instructions on how t
 ### File Structure
 
 - **`components/`**
-  - `card.tsx`:
-  - `errorPage.tsx`:
-  - `footer.tsx`:
-  - `fullProduct.tsx`:
-  - `header.tsx`:
-  - `layout.tsx`:
-  - `product.tsx`:
-  - `productFilter.tsx`:
-  - `sidebar.tsx`:
-  - `signUpForm.tsx`:
-  - `socialSection.tsx`:
+  - `card.tsx`: component to style the card containing product information.
+  - `errorPage.tsx`: component for the error page, when information does not load or is not found on the site.
+  - `footer.tsx`: footer component that contains sign-up form component, and company information to every page.
+  - `fullProduct.tsx`: product component that is displayed on the single product page.
+  - `header.tsx`: header component to display header with toggle sidebar button, logo and icons such as account, wishlist, and basket.
+  - `layout.tsx`: layout component of the page so that every page has a header, sidebar, main body, and footer.
+  - `product.tsx`: product component displaying all product information and like/add to basket icon.
+  - `productFilter.tsx`: component to filter products by a certain amount.
+  - `sidebar.tsx`: component for the sidebar so it is collapsible and contains correct data.
+  - `signUpForm.tsx`: sign up form component that lets a user add their email to a mailing list form.
+  - `socialSection.tsx`: social section component that is found on the homepage, displaying images.
   
 - **`data/`**
-  - `database.types.ts`:
-  - `requests.ts`:
-  - `singleProductRequest.ts`
-  - `supabase.ts`
+  - `database.types.ts`: contains database information for Supabase to allow requests.
+  - `requests.ts`: queries to Supabase to retrieve all products and single products.
+  - `singleProductRequest.ts1: requests to Supabase to retrieve single products.
+  - `supabase.ts`: requests to Supabase to retrieve all products.
     
 - **`models/`**
-  - `product.ts`
+  - `product.ts`: contains the expected structure of a product from database.
     
 - **`pages/`**
   - `api/`
     - `products/`
-        - `[id].ts`
-        - `index.ts`
+        - `[id].ts`: api request to retrieve single product
+        - `index.ts`: api request to retrieve all products to homepage.
         - `products.ts`
      - `_app.tsx`
-     - `[id].tsx`
-     - `about.tsx`
-     - `index.tsx`
-     - `products.tsx`
+     - `[id].tsx`: page for a single product.
+     - `about.tsx`: about page.
+     - `index.tsx`: homepage
+     - `products.tsx`: page to display all products.
       
 - **`public/`**
-  - `images/`
+  - `images/`: contains images used on the website.
       - `in-process.jpg`
       - `landing-page-image.jpg`
       - `social-image-1.jpg`
@@ -136,11 +137,13 @@ In this project, I stored the `products` data in Supabase. Instructions on how t
 
 ### Usage Instructions
 
+To see the final product, please head to this [link](https://53d9a805-d25f-40df-821d-c39719866bba-00-yb12mn67hr8m.riker.replit.dev/). This is from using Replit, so the website has not been deployed. 
+
 #### Data Setup
 
-To set-up the data, first upload the data to Supabase.
+To set-up the data, the `products` data is first uploaded to Supabase.
 
-Then select the data, the `data/requests.ts` file has been created to store these queries. For example, to select all the product data:
+The data is then selected with the `data/requests.ts` file. For example, to select all the product data:
 ```typescript
 export async function selectProductData(supabase: any) {
   let { data: products, error } = await supabase
@@ -185,3 +188,22 @@ export default async function handler(
   res.status(200).json(productData.products);
 }
 ```
+
+### Next Steps
+
+If I had more time to complete the project, here are a few things I would work on implementing:
+1. Improving the homepage
+   - Adding more sections e.g. Shop by Category, Recommended for You.
+   - Creating a scalable landing image or a carousel to display images
+2. Ensuring styling is consistent throughout the site
+3. Adding functionalities and creating these individual pages
+   - Add to basket
+   - Add to wishlist
+4. Adding more data to the database e.g. images, item descriptions, more products
+5. Improving the product page to display more information, reviews...
+
+## Final Thoughts
+
+Overall I thoroughly enjoyed this project. Having not really delved into web development, it was great to learn about the full-stack process and create a final product that could potentially be fully-functioning and have a more aesthetically-pleasing look.
+
+Having learned the basics of full-stack web development, I am hoping to create a portfolio website or create a new and improved alternative site for a business.
